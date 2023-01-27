@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Amoult</label>
+        <input type="number">
+        <label for="">From currency</label>
+        <select name="" id="form-1">
+            <option class="option-1" value="25500">Viet Nam</option>
+            <option class="option-1" value="18327">Lao</option>
+            <option class="option-1" value="4475">Campuchia</option>
+        </select>
+        <label for="">To currency</label>
+        <select id="form-2">
+            <option value="1.09" name="$">USD</option>
+            <option value="1">Euro</option>
+        </select>
+        <button>Convert</button>
+    </form>
+    <div id="result" style="color: blue;" ></div>
+    <script>
+        var fromCurr = document.querySelector('#form-1');
+        var toCurr = document.querySelector('#form-2');
+        var numberInput = document.querySelector('input');
+        var result = document.querySelector('#result');
+        var btn = document.querySelector('button');
+        btn.onclick = function(event) {
+            event.preventDefault();
+            clickBtn();
+        }
+        function clickBtn() {
+            var exchange = numberInput.value / fromCurr.value * toCurr.value;
+            console.log(exchange);
+            result.innerHTML = `Result: ${exchange}`;
+        }
+    </script>
+</body>
+</html>
